@@ -1,0 +1,116 @@
+1、标识符 
+Python中标识符由字母、数字、下划线组成
+不能以数字开头
+不可以使用关键字，但可以包含关键字
+标识符区分大小写
+以下划线开头的标识符是有特殊意义的。以单下划线开头的表示不能直接访问的类属性（如_foo）；
+以双下划线开头的表示类的私有成员（__foo）；
+以双下划线开头和结尾的表示特殊方法专用标识符，如__init__()代表类的构造函数。
+如：a a2 v_ v_3等
+
+2、	关键字
+Python的关键字不能作为常数或变数，也不能作为任何标识符。
+Python中的关键字都是由小写字母组成。
+
+and	exec	not
+assert	finally	or
+break	for	pass
+class	from	print
+continue	global	raise
+def	if	return
+del	import	try
+elif	in	while
+else	is	with
+except	lambda	yield
+
+
+3、	注释
+
+Python的单行注释，是采用#开头的，Python没有专门的多行注释，不过可以采用三引导号进行多行注释。
+
+4、	变量赋值
+Python中的变量不需要提前声明，变量的赋值操作既是变量的声明也是变量的定义过程。
+每个变量在内存中创建，都包含变量的表示，名称和数据这些信息。
+每个标量在使用前都必须赋值，变量赋值以后该变量才会被创建。
+使用等号（=）给变量赋值
+如：aa = 1  a_b = 2
+等号左边是变量名，右边是存储在变量中的值。
+Python允许同时为多个变量赋值。如：a,b,c = 1,2,’three’
+以上实例，表示两个整数对象1和2分别分配给变量a和b，字符串对象’three’分配给变量c。
+
+5、	Python变量的特性：
+1)\python变量可以重新赋值，python变量相当于一个标签，这个标签指向内存中存放的值，当我们给变量重新赋值时，变量标签所指向的地址就会改变，查看变量指向的地址可以通过id()函数来实现。
+[html] view plain copy print?
+1.	>>> a = 12  
+2.	>>> id(a)  
+3.	29827632  
+4.	>>> a = 23  
+5.	>>> id(a)  
+6.	29827368  
+
+2）、同样一个地址空间
+[html] view plain copy print?
+>>> a = 123  
+>>> b = 123  
+>>> id(a)  
+29830944  
+>>> id(b)  
+29830944  
+
+Python5个标准数据类型
+1、Numbers    ---数字
+2、String     ---字符串
+3、List       ---列表
+4、Tuple      ---元组
+5、Dictionary ---字典
+
+
+Numbers  ---数字数据类型，用于存储数值，并且是不可变数据类型，这意味着改变数字数据类型以后就重新分配了一个新的对象。
+当给变量制定一个数值时，Number对象就会创建：
+>>>var = 88
+>>>num = 2334
+使用del可一同时删除一个或者多个对象，如：
+>>>del var,num
+但是这种删除，针对一个对象有好几个标签来说，删除其中一个标签，并不会影响其他的标签指向这个对象。
+
+>>> a = 2345
+>>> b = 2345
+>>> id(a)
+2200084994352
+>>> b = a #让b和a指向同一内存空间
+>>> id(b)
+2200084994352
+>>> b
+2345
+>>> del a
+>>> id(b)
+2200084994352
+>>> b #删除a后，b所指向的内存空间还在
+2345
+>>> a  #a已被删除，不存在了。
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    a  #a已被删除，不存在了。
+NameError: name 'a' is not defined
+
+Python支持的数值类型有：
+int ---有符号整型
+long ---长整数，以I或L表示
+float ---浮点型
+complex ---复数，比如a + bi这种复数表达式
+
+
+小练习
+
+#计算一周的分钟数 PS：无聊的升级版，计算秒数。
+
+DaysPerWeek = 7 #一周的天数
+HoursPerDay = 24 #每天的小时数
+MinuterPerHour = 60 #每小时的分钟数
+SecondPerMintter = 60 #每分钟的秒数
+
+print("一周的分钟数为：",DaysPerWeek * HoursPerDay * MinuterPerHour)
+print("一周的秒数为：",DaysPerWeek * HoursPerDay * MinuterPerHour * SecondPerMintter)
+
+
+笔记来源：http://blog.csdn.net/seetheworld518/article/details/46525291
